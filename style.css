@@ -136,8 +136,8 @@ body.light-mode {
 
 .light-mode #light-dark-toggle {
   background: inherit;
-  color: #d5d4d8;
-  border: 1px solid #d5d4d8;
+  color: #b0afb6;
+  border: 1px solid #b0afb6;
 }
 
 .light-mode .heading {
