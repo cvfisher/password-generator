@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+}
+
+.main-wrapper {
+  max-width: 550px;
+  max-height: 550px;
+  margin: 50px auto;
+  background: #1f2937;
+  padding: 115px 52px;
+}
+
+.heading-wrapper {
+  border-bottom: 1px solid #2f3e53;
+  margin-bottom: 35px;
+}
+
+.heading {
+  font-family: "Karla", sans-serif;
+}
+
+.subheading {
+  margin-bottom: 50px;
+}
+
+.btn,
+.heading-wrapper {
+  margin-bottom: 35px;
+}
+
+.passwords-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.password-el {
+  border: 1px solid black;
+  width: 100px;
+  height: 20px;
+}
