@@ -91,3 +91,37 @@ const characters = [
   "?",
   "/",
 ];
+
+function generatePassword() {
+  const passwordLength = document.getElementById("password-length");
+  const passwordEl1 = document.getElementById("password-el-1");
+  const passwordEl2 = document.getElementById("password-el-2");
+  let password = "";
+  let password2 = "";
+  const usedChars = [];
+  for (let i = 0; i < passwordLength.value; i++) {
+    let randomChar1 = Math.floor(Math.random() * characters.length);
+    let randomChar2 = Math.floor(Math.random() * characters.length);
+    if (!usedChars.includes(randomChar1) || !usedChars.includes(randomChar2)) {
+      password += characters[randomChar1];
+      usedChars.push(randomChar1);
+      password2 += characters[randomChar2];
+      usedChars.push(randomChar2);
+      passwordEl1.textContent = password;
+      passwordEl2.textContent = password2;
+    } else {
+      i--;
+    }
+  }
+  return password;
+}
+
+const passwordText = document.querySelector(".password-el");
+const copyContent = async () => {
+  try {
+    await navigator.clipboard.writeText(passwordText.innerHTML);
+    alert("Content copied to clipboard");
+  } catch (err) {
+    alert("Failed to copy", err);
+  }
+};

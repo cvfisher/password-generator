@@ -3,6 +3,7 @@ body {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
   color: #fff;
+  background: #1c1c1c;
 }
 
 .main-wrapper {
@@ -20,25 +21,80 @@ body {
 
 .heading {
   font-family: "Karla", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 40px;
+}
+
+#heading-green {
+  color: #10b981;
 }
 
 .subheading {
   margin-bottom: 50px;
+  font-size: 20px;
 }
 
+.inputs-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+#password-length {
+  width: 40px;
+  background: inherit;
+  border: none;
+  border-bottom: 1px solid #2f3e53;
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+#password-length label {
+  border-bottom: none;
+}
+
+.btn {
+  background: #10b981;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 15px;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  display: block;
+}
+.btn:hover {
+  background: #0d9c6d;
+}
 .btn,
-.heading-wrapper {
+.heading-wrapper,
+.password-length-wrapper {
   margin-bottom: 35px;
 }
 
 .passwords-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 24px;
 }
 
 .password-el {
   border: 1px solid black;
-  width: 100px;
-  height: 20px;
+  width: 100%;
+  height: 40px;
+  background: #273549;
+  border: none;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #55f991;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-el:hover {
+  cursor: copy;
+  border: 5px solid #10b981;
 }
