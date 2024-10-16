@@ -12,6 +12,16 @@ body {
   margin: 50px auto;
   background: #1f2937;
   padding: 115px 52px;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 0 8px #000;
+}
+
+.light-dark-wrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 14px 35px;
 }
 
 .heading-wrapper {
@@ -33,6 +43,7 @@ body {
 .subheading {
   margin-bottom: 50px;
   font-size: 20px;
+  color: #d5d4d8;
 }
 
 .inputs-wrapper {
@@ -49,10 +60,15 @@ body {
   color: #fff;
   font-family: inherit;
   font-size: 16px;
+  font-weight: bold;
 }
 
 #password-length label {
   border-bottom: none;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .btn {
@@ -97,4 +113,49 @@ body {
 .password-el:hover {
   cursor: copy;
   border: 5px solid #10b981;
+}
+
+#light-dark-toggle {
+  background: inherit;
+  border: 1px solid #4c6486;
+  color: #4c6486;
+}
+
+#light-dark-toggle:hover {
+  background: #1b2430;
+  color: #6584af;
+  border: 1px solid #4c6486;
+}
+
+body.light-mode {
+  background: #273549;
+}
+.light-mode {
+  background: #ecfdf5;
+}
+
+.light-mode #light-dark-toggle {
+  background: inherit;
+  color: #d5d4d8;
+  border: 1px solid #d5d4d8;
+}
+
+.light-mode .heading {
+  color: #000;
+}
+
+.light-mode .subheading {
+  color: #6b7280;
+}
+
+.light-mode #light-dark-toggle:hover {
+  background: #dbeee5;
+  color: #969597;
+  border: 1px solid #969597;
+}
+
+.light-mode .heading-wrapper,
+.light-mode #password-length {
+  border-bottom: 1px solid #d5d4d8;
+  color: #111827;
 }

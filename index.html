@@ -19,7 +19,14 @@
     <title>Password Generator</title>
   </head>
   <body>
-    <div class="main-wrapper">
+      <div class="main-wrapper">
+        <div class="header">
+            <div class="light-dark-wrapper">
+                <button id="light-dark-toggle" class="btn" name="light-dark-toggle" onclick="toggleDarkMode()">Toggle light/dark mode</button>
+            </div>
+            <span class="slider round"></span>
+          </label>
+        </div>
       <div class="heading-wrapper">
         <h1 class="heading">
           Generate a <br /><span id="heading-green">random password</span>
@@ -31,7 +38,7 @@
           </button>
           <div class="password-length-wrapper">
             <label for="password-length"
-              >Password length (min. 8 characters):&nbsp;
+              >Password length <span class=italic>(min. 8 characters)</span>:&nbsp;
             </label>
             <input
               type="number"

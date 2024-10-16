@@ -125,3 +125,28 @@ const copyContent = async () => {
     alert("Failed to copy", err);
   }
 };
+
+// .light-mode {
+//     background: #ecfdf5;
+//     color: #6b7280;
+//   }
+//   .light-mode .heading {
+//     color: #000;
+//   }
+//   .light-mode .heading-wrapper,
+//   .light-mode #password-length {
+//     border-bottom: 1px solid #d5d4d8;
+//   }
+
+function toggleDarkMode() {
+  const body = document.querySelector("body");
+  const main = document.querySelector(".main-wrapper");
+  const heading = document.querySelector(".heading");
+  const headingWrapper = document.querySelector(".heading-wrapper");
+  const passwordLength = document.getElementById("password-length");
+  body.classList.toggle("light-mode");
+  main.classList.toggle("light-mode");
+  //   heading.classList.toggle("light-mode");
+  //   headingWrapper.classList.toggle("light-mode");
+  //   passwordLength.classList.toggle("light-mode");
+}
