@@ -1,5 +1,5 @@
-function getCharacterSet() {
-  return [
+function getCharacterSet(includeSymbols) {
+  let characters = [
     "A",
     "B",
     "C",
@@ -92,6 +92,46 @@ function getCharacterSet() {
     "?",
     "/",
   ];
+
+  if (!includeSymbols) {
+    characters = characters.filter((c) => !isSymbol(c));
+  }
+  return characters;
+}
+
+function isSymbol(char) {
+  const symbols = [
+    "~",
+    "`",
+    "!",
+    "@",
+    "#",
+    "$",
+    "%",
+    "^",
+    "&",
+    "*",
+    "(",
+    ")",
+    "_",
+    "-",
+    "+",
+    "=",
+    "{",
+    "[",
+    "}",
+    "]",
+    ",",
+    "|",
+    ":",
+    ";",
+    "<",
+    ">",
+    ".",
+    "?",
+    "/",
+  ];
+  return symbols.includes(char);
 }
 
 function getRandomChar(length) {
@@ -102,9 +142,10 @@ function generatePassword() {
   const passwordEl1 = document.getElementById("password-el-1");
   const passwordEl2 = document.getElementById("password-el-2");
   const passwordLength = document.getElementById("password-length");
+  const includeSymbols = document.getElementById("include-symbols").checked;
   let password = "";
   let password2 = "";
-  const characters = getCharacterSet();
+  const characters = getCharacterSet(includeSymbols);
   const usedChars = [];
   for (let i = 0; i < passwordLength.value; i++) {
     let randomChar1 = getRandomChar(characters.length);
@@ -124,8 +165,8 @@ function generatePassword() {
   return password;
 }
 
-const passwordText = document.querySelector(".password-el");
 const copyContent = async () => {
+  const passwordText = document.querySelector(".password-el");
   try {
     await navigator.clipboard.writeText(passwordText.innerHTML);
     alert("Content copied to clipboard");

@@ -50,10 +50,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: end;
+  gap: 30px;
 }
 
 #password-length {
-  width: 40px;
+  width: 38px;
   background: inherit;
   border: none;
   border-bottom: 1px solid #2f3e53;
@@ -85,9 +86,20 @@ body {
   background: #0d9c6d;
 }
 .btn,
-.heading-wrapper,
-.password-length-wrapper {
+.heading-wrapper {
   margin-bottom: 35px;
+}
+
+.right-side-inputs-wrapper {
+  margin-bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 8px;
+}
+
+.include-symbols-wrapper {
+  margin-right: 28px;
 }
 
 .passwords-wrapper {
