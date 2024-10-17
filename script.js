@@ -143,27 +143,38 @@ function generatePassword() {
   const passwordEl2 = document.getElementById("password-el-2");
   const passwordLength = document.getElementById("password-length");
   const includeSymbols = document.getElementById("include-symbols").checked;
+  const usedChars = [];
   let password = "";
   let password2 = "";
   const characters = getCharacterSet(includeSymbols);
-  const usedChars = [];
   for (let i = 0; i < passwordLength.value; i++) {
     let randomChar1 = getRandomChar(characters.length);
     let randomChar2 = getRandomChar(characters.length);
-    console.log(randomChar1);
-    if (!usedChars.includes(randomChar1) || !usedChars.includes(randomChar2)) {
-      password += characters[randomChar1];
-      usedChars.push(randomChar1);
-      password2 += characters[randomChar2];
-      usedChars.push(randomChar2);
-      passwordEl1.textContent = password;
-      passwordEl2.textContent = password2;
-    } else {
+    if (
+      password.length > 0 &&
+      characters[randomChar1] === password[password.length - 1]
+    ) {
       i--;
+      continue;
     }
+    if (
+      password2.length > 0 &&
+      characters[randomChar1] === password2[password2.length - 1]
+    ) {
+      i--;
+      continue;
+    }
+
+    password += characters[randomChar1];
+    usedChars.push(randomChar1);
+    password2 += characters[randomChar2];
+    usedChars.push(randomChar2);
+    passwordEl1.textContent = password;
+    passwordEl2.textContent = password2;
   }
   return password;
 }
+console.log(usedChars);
 
 const copyContent = async () => {
   const passwordText = document.querySelector(".password-el");
