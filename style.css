@@ -98,8 +98,16 @@ body {
   gap: 8px;
 }
 
-.include-symbols-wrapper {
+.include-wrapper {
   margin-right: 28px;
+}
+
+.include-symbols-wrapper,
+.include-nums-wrapper {
+  display: inline-block;
+}
+.include-nums-wrapper {
+  margin-left: 18px;
 }
 
 .passwords-wrapper {
