@@ -135,6 +135,10 @@ body {
   border: 5px solid #10b981;
 }
 
+input[type="checkbox"] {
+  accent-color: #10b981;
+}
+
 #light-dark-toggle {
   background: inherit;
   border: 1px solid #4c6486;
