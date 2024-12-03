@@ -1,82 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Password Generator</title>
-  </head>
-  <body>
-      <div class="main-wrapper">
-        <div class="header">
-            <div class="light-dark-wrapper">
-                <button id="light-dark-toggle" class="btn" name="light-dark-toggle" onclick="toggleDarkMode()">Toggle light/dark mode</button>
-            </div>
-            <span class="slider round"></span>
-          </label>
-        </div>
-      <div class="heading-wrapper">
-        <h1 class="heading">
-          Generate a <br /><span id="heading-green">random password</span>
-        </h1>
-        <p class="subheading">Never use an insecure password again.</p>
-        <div class="inputs-wrapper">
-          <button class="btn" onclick="generatePassword()">
-            Generate passwords
-          </button>
-          <div class="right-side-inputs-wrapper">
-            <div class="password-length-wrapper">
-              <label for="password-length"
-              >Password length <span class=italic>(min. 8 characters)</span>:&nbsp;
-            </label>
-            <input
-            type="number"
-            id="password-length"
-            value="15"
-            name="password-length"
-            min="8"
-            />
-          </div>
-          <div class="include-wrapper">
-            <div class="include-symbols-wrapper">
-
-              <label for="include-symbols">Symbols</label>
-              <input checked type="checkbox" id="include-symbols" name="include-symbols">
-            </div>
-            <div class="include-nums-wrapper">
-
-              <label for="include-numbers">Numbers</label>
-              <input checked type="checkbox" id="include-numbers" name="include-numbers">
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class="passwords-wrapper">
-        <div
-          class="password-el"
-          id="password-el-1"
-          onclick="copyContent()"
-        ></div>
-        <div
-          class="password-el"
-          id="password-el-2"
-          onclick="copyContent()"
-        ></div>
-      </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Password Generator</title>
+	</head>
+	<body>
+		<div class="app-wrapper">
+			<header>
+				<div class="light-dark-wrapper">
+					<button
+						id="light-dark-toggle"
+						class="btn"
+						name="light-dark-toggle"
+						onclick="toggleDarkMode()"
+					>
+						Toggle light/dark mode
+					</button>
+				</div>
+			</header>
+			<main>
+				<section class="heading-wrapper">
+					<h1 class="heading">
+						Generate a <br /><span id="heading-green">random password</span>
+					</h1>
+					<p class="subheading">Never use an insecure password again.</p>
+					<div class="controls-wrapper">
+						<button class="generate-btn btn" onclick="generatePassword()">
+							Generate passwords
+						</button>
+						<div class="inputs-wrapper">
+							<div class="password-length-wrapper">
+								<label for="password-length"
+									>Password length
+									<span class="italic">(min. 8 characters)</span>:&nbsp;
+								</label>
+								<input
+									type="number"
+									id="password-length"
+									value="15"
+									name="password-length"
+									min="8"
+								/>
+							</div>
+							<div class="checkbox-wrapper">
+								<div class="include-symbols-wrapper">
+									<label for="include-symbols">Symbols</label>
+									<input
+										checked
+										type="checkbox"
+										id="include-symbols"
+										name="include-symbols"
+									/>
+								</div>
+								<div class="include-nums-wrapper">
+									<label for="include-numbers">Numbers</label>
+									<input
+										checked
+										type="checkbox"
+										id="include-numbers"
+										name="include-numbers"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<p>Click to copy password</p>
+				<section class="passwords-wrapper">
+					<div
+						class="password-el"
+						id="password-el-1"
+						onclick="copyContent()"
+						tabindex="0"
+					></div>
+					<div
+						class="password-el"
+						id="password-el-2"
+						onclick="copyContent()"
+						tabindex="0"
+					></div>
+				</section>
+				<p id="confirm-message">Copied to clipboard! ✔️</p>
+			</main>
+		</div>
+		<script src="script.js"></script>
+	</body>
 </html>
