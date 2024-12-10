@@ -1,0 +1,52 @@
+@media (max-width: 1000px) {
+	.app-wrapper {
+		max-width: 80%;
+		padding: 5rem 2.5rem;
+		text-align: center;
+	}
+
+	.controls-wrapper {
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.passwords-wrapper {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 1rem;
+	}
+
+	/* Adjust input widths */
+	#password-length {
+		width: 3rem;
+	}
+
+	/* Adjust font size */
+	h1 {
+		font-size: 2rem;
+	}
+
+	h2 {
+		font-size: 1.125rem;
+		margin-bottom: 2rem;
+	}
+
+	/* Adjust button sizes */
+	.generate-btn {
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	/* Stack checkbox items vertically but keep symbols and numbers side by side */
+	.checkbox-wrapper {
+		flex-direction: row; /* Keep them side by side */
+		gap: 1.875rem;
+		justify-content: center;
+	}
+
+	.include-symbols-wrapper,
+	.include-nums-wrapper {
+		display: inline-block;
+	}
+}

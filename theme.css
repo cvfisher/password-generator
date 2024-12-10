@@ -14,25 +14,30 @@ body {
 	--main-btn-bkg-color: #10b981;
 	--main-btn-bkg-color-hover: #0d9c6d;
 	--main-btn-text-color: #ecfdf5;
-	--theme-btn-bkg-color: #ecfdf5;
+	--theme-btn-bkg-color: #192331;
 	--theme-btn-text-color: #6b7280;
 	--theme-btn-border: 1px solid #6b7280;
-	--theme-btn-bkg-color-hover: #e0e9e0;
+	--theme-btn-bkg-hover: #151c25;
 	--theme-btn-text-color-hover: #4d525a;
 	--theme-btn-border-hover: 1px solid #4d525a;
 }
 /* Dark theme colours */
 body.dark-theme {
 	--text-color: #ecfdf5;
+	--heading-color: #ecfdf5;
 	--bkg-color: #1c1c1c;
 	--app-color: #1f2937;
-	--heading-color: #ecfdf5;
 	--border-bottom-color: 1px solid #2f3e53;
-	--theme-btn-bkg-color: #1f2937;
-	--theme-btn-bkg-color-hover: #1b2430;
+	--input-text-color: #ecfdf5;
+	--theme-btn-bkg-color: #cde7ff;
+	--theme-btn-text-color: #2f3e53;
+	--theme-btn-border-color: 1px solid #2f3e53;
+	--theme-btn-bkg-hover: #bad5ee;
 	--theme-btn-text-color-hover: #6584af;
 	--theme-btn-border-hover: 1px solid #6584af;
 }
+
+/* Dark theme from preferred browser colour scheme */
 @media (prefers-color-scheme: dark) {
 	body {
 		--text-color: #ecfdf5;
@@ -43,7 +48,7 @@ body.dark-theme {
 		--theme-btn-bkg-color: ##273549;
 		--theme-btn-text-color: #2f3e53;
 		--theme-btn-border-color: 1px solid #2f3e53;
-		--theme-btn-bkg-hover: #1b2430;
+		--theme-btn-bkg-hover: #bfdcf8;
 		--theme-btn-text-color-hover: #6584af;
 		--theme-btn-border-hover: 1px solid #6584af;
 	}
@@ -60,7 +65,7 @@ body.dark-theme {
 		--theme-btn-bkg-color: #ecfdf5;
 		--theme-btn-text-color: #6b7280;
 		--theme-btn-border: 1px solid #6b7280;
-		--theme-btn-bkg-color-hover: #c5e0ff;
+		--theme-btn-bkg-color-hover: #1b2430;
 		--theme-btn-text-color-hover: #4d525a;
 		--theme-btn-border-hover: 1px solid #4d525a;
 	}

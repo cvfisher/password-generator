@@ -3,8 +3,8 @@ import {
 	getStoredTheme,
 	saveThemePreference,
 	setTheme,
-	configureTheme,
 	toggleTheme,
+	configureTheme,
 } from "./theme.js";
 
 function getCharacterSet(includeSymbols, includeNumbers) {

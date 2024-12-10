@@ -17,10 +17,10 @@ export function setTheme(theme) {
 
 export function configureTheme() {
 	const storedTheme = getStoredTheme();
-	const preferredTheme = isDarkModePreferred() ? "dark" : "light";
 	if (storedTheme) {
 		setTheme(storedTheme);
 	} else {
+		const preferredTheme = isDarkModePreferred() ? "dark" : "light";
 		setTheme(preferredTheme);
 		saveThemePreference(preferredTheme);
 	}
@@ -36,10 +36,10 @@ export function toggleTheme() {
 	if (currentTheme === "dark") {
 		setTheme("light");
 		saveThemePreference("light");
-		btn.textContent = "☀️";
+		btn.textContent = "🌙";
 	} else {
 		setTheme("dark");
 		saveThemePreference("dark");
-		btn.textContent = "🌙";
+		btn.textContent = "☀️";
 	}
 }
