@@ -66,6 +66,9 @@ function initializeApp() {
 		.addEventListener("click", generatePassword);
 	document.querySelectorAll(".password-el").forEach((el) => {
 		el.addEventListener("click", copyContent);
+
+		updateCopyText();
+		window.addEventListener("resize", updateCopyText);
 	});
 }
 
@@ -82,5 +85,18 @@ const copyContent = async (event) => {
 		alert("Failed to copy", err);
 	}
 };
+function updateCopyText() {
+	const isMobile = window.matchMedia("(max-width: 768px)").matches;
+	const copyTextEl = document.getElementById("copy-text");
+	if (copyTextEl) {
+		copyTextEl.textContent = isMobile ? "Tap to copy" : "Click to copy";
+	}
+}
+
+// Call updateCopyText initially to set the correct text
+updateCopyText();
+
+// Add an event listener to update the text when the screen resizes
+window.addEventListener("resize", updateCopyText);
 
 initializeApp();

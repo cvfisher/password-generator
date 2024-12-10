@@ -4,6 +4,10 @@
 }
 
 body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin: 0;
 	padding: 0;
 	font-family: "Inter", sans-serif;
@@ -15,8 +19,8 @@ body {
 
 /* App wrapper styles */
 .app-wrapper {
-	max-width: 50%;
-	margin: 3.125rem auto;
+	max-width: 80%;
+	/* margin: 7rem auto; */
 	background: var(--app-color);
 	padding: 115px 52px;
 	position: relative;
