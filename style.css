@@ -1,70 +1,84 @@
+/* Resetting box-sizing */
 * {
 	box-sizing: border-box;
 }
 
+/* Global styles */
 body {
 	margin: 0;
 	padding: 0;
 	font-family: "Inter", sans-serif;
 	font-size: 1rem;
-	color: #fff;
-	background: #1c1c1c;
+	color: var(--text-color);
+	background: var(--bkg-color);
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .app-wrapper {
 	max-width: 50%;
 	margin: 3.125rem auto;
-	background: #1f2937;
+	background: var(--app-color);
 	padding: 115px 52px;
 	position: relative;
 	border-radius: 12px;
 	box-shadow: 0 0 8px #000;
 }
 
-.light-dark-wrapper {
-	position: absolute;
-	right: 0;
-	top: 0;
-	padding: 0.875rem 2.1875rem;
-}
-
-.heading-wrapper {
-	border-bottom: 1px solid #2f3e53;
+.heading-wrapper,
+.inputs-wrapper,
+.generate-btn,
+.passwords-wrapper {
 	margin-bottom: 2.1875rem;
 }
 
-.heading {
+h1 {
 	font-family: "Karla", sans-serif;
+	color: var(--heading-color);
 	font-size: 2.5rem;
 	font-weight: 800;
 	line-height: 2.5rem;
 }
 
 #heading-green {
-	color: #10b981;
+	color: var(--subheading-accent-color);
 }
 
-.subheading {
+h2 {
 	margin-bottom: 3.125rem;
 	font-size: 1.25rem;
-	color: #d5d4d8;
+	color: var(--subheading-color);
 }
 
-.controls-wrapper {
-	display: flex;
-	justify-content: space-between;
-	align-items: end;
-	gap: 1.875rem;
+/* Button styles */
+.btn {
+	border-radius: 6px;
+	padding: 0.5625rem 0.9375rem;
+	letter-spacing: 0.8px;
+	cursor: pointer;
+	font-family: "Inter", sans-serif;
 }
 
+.generate-btn {
+	background: var(--main-btn-bkg-color);
+	font-size: 1rem;
+	color: #fff;
+	border: none;
+	display: block;
+}
+
+.generate-btn:hover {
+	background: var(--main-btn-bkg-color-hover);
+}
+
+/* Input and label styles */
 #password-length {
-	width: 38px;
+	color: var(--input-text-color);
+	width: 2.375rem;
 	background: inherit;
 	border: none;
 	border-bottom: 1px solid #2f3e53;
-	color: #fff;
 	font-family: inherit;
-	font-size: 16px;
+	font-size: 1rem;
 	font-weight: bold;
 }
 
@@ -76,40 +90,9 @@ body {
 	font-style: italic;
 }
 
-.btn {
-	border-radius: 6px;
-	padding: 9px 15px;
-	letter-spacing: 0.8px;
-	cursor: pointer;
-	font-family: "Inter", sans-serif;
-}
-
-.generate-btn {
-	background: #10b981;
-	font-size: 1rem;
-	color: #fff;
-	border: none;
-	display: block;
-}
-.generate-btn:hover {
-	background: #0d9c6d;
-}
-.generate-btn,
-.heading-wrapper {
-	margin-bottom: 35px;
-}
-
-.inputs-wrapper {
-	margin-bottom: 35px;
-	display: flex;
-	flex-direction: column;
-	align-items: end;
-	gap: 8px;
-}
-
 .checkbox-wrapper {
 	display: flex;
-	gap: 30px;
+	gap: 1.875rem;
 }
 
 .include-symbols-wrapper,
@@ -117,23 +100,16 @@ body {
 	display: inline-block;
 }
 
-.passwords-wrapper {
-	display: flex;
-	justify-content: space-between;
-	gap: 24px;
-	flex-wrap: wrap;
-	max-width: 100%;
-}
-
+/* Password container styles */
 .password-el {
 	flex: 1;
 	width: 100%;
-	min-height: 40px;
+	min-height: 2.5rem;
 	max-width: 100%;
 	background: #273549;
 	border: 5px solid transparent;
 	border-radius: 6px;
-	color: #55f991;
+	color: var(--password-text-color);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -144,59 +120,16 @@ body {
 .password-el:hover,
 .password-el:focus {
 	cursor: copy;
-	border: 5px solid #10b981;
+	border: var(--password-el-border);
 	outline: none;
 }
 
+/* Checkbox color */
 input[type="checkbox"] {
-	accent-color: #10b981;
+	accent-color: var(--checkbox-color);
 }
 
-#light-dark-toggle {
-	background: inherit;
-	border: 1px solid #4c6486;
-	color: #4c6486;
-}
-
-#light-dark-toggle:hover {
-	background: #1b2430;
-	color: #6584af;
-	border: 1px solid #4c6486;
-}
-
-body.light-mode {
-	background: #273549;
-}
-.light-mode {
-	background: #ecfdf5;
-}
-
-.light-mode #light-dark-toggle {
-	background: inherit;
-	color: #b0afb6;
-	border: 1px solid #b0afb6;
-}
-
-.light-mode .heading {
-	color: #000;
-}
-
-.light-mode .subheading {
-	color: #6b7280;
-}
-
-.light-mode #light-dark-toggle:hover {
-	background: #dbeee5;
-	color: #969597;
-	border: 1px solid #969597;
-}
-
-.light-mode .heading-wrapper,
-.light-mode #password-length {
-	border-bottom: 1px solid #d5d4d8;
-	color: #111827;
-}
-
+/* Confirm message */
 #confirm-message {
 	visibility: hidden;
 	opacity: 0;
@@ -207,4 +140,19 @@ body.light-mode {
 	visibility: visible;
 	opacity: 1;
 	transition: opacity 0.5s ease, visibility 0s;
+}
+
+/* Theme button styles */
+#theme-btn {
+	background: var(--theme-btn-bkg-color);
+	color: var(--theme-btn-text-color);
+	border: var(--theme-btn-border);
+	font-family: "Inter", sans-serif;
+}
+
+#theme-btn:hover,
+#theme-btn:active {
+	background: var(--theme-btn-bkg-color-hover);
+	color: var(--theme-btn-text-color-hover);
+	border: var(--theme-btn-border-hover);
 }

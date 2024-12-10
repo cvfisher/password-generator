@@ -16,32 +16,24 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="theme.css" />
 		<title>Password Generator</title>
 	</head>
 	<body>
 		<div class="app-wrapper">
 			<header>
-				<div class="light-dark-wrapper">
-					<button
-						id="light-dark-toggle"
-						class="btn"
-						name="light-dark-toggle"
-						onclick="toggleDarkMode()"
-					>
-						Toggle light/dark mode
-					</button>
+				<div class="theme-btn-wrapper">
+					<button id="theme-btn" class="btn" name="theme-btn">🌙</button>
 				</div>
 			</header>
 			<main>
 				<section class="heading-wrapper">
-					<h1 class="heading">
+					<h1>
 						Generate a <br /><span id="heading-green">random password</span>
 					</h1>
-					<p class="subheading">Never use an insecure password again.</p>
+					<h2>Never use an insecure password again.</h2>
 					<div class="controls-wrapper">
-						<button class="generate-btn btn" onclick="generatePassword()">
-							Generate passwords
-						</button>
+						<button class="generate-btn btn">Generate passwords</button>
 						<div class="inputs-wrapper">
 							<div class="password-length-wrapper">
 								<label for="password-length"
@@ -81,22 +73,13 @@
 				</section>
 				<p>Click to copy password</p>
 				<section class="passwords-wrapper">
-					<div
-						class="password-el"
-						id="password-el-1"
-						onclick="copyContent()"
-						tabindex="0"
-					></div>
-					<div
-						class="password-el"
-						id="password-el-2"
-						onclick="copyContent()"
-						tabindex="0"
-					></div>
+					<div class="password-el" id="password-el-1" tabindex="0"></div>
+					<div class="password-el" id="password-el-2" tabindex="0"></div>
 				</section>
 				<p id="confirm-message">Copied to clipboard! ✔️</p>
 			</main>
 		</div>
-		<script src="script.js"></script>
+		<script type="module" src="theme.js"></script>
+		<script type="module" src="script.js"></script>
 	</body>
 </html>

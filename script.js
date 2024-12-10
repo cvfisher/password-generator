@@ -1,145 +1,23 @@
+import {
+	isDarkModePreferred,
+	getStoredTheme,
+	saveThemePreference,
+	setTheme,
+	configureTheme,
+	toggleTheme,
+} from "./theme.js";
+
 function getCharacterSet(includeSymbols, includeNumbers) {
-	let characters = [
-		"A",
-		"B",
-		"C",
-		"D",
-		"E",
-		"F",
-		"G",
-		"H",
-		"I",
-		"J",
-		"K",
-		"L",
-		"M",
-		"N",
-		"O",
-		"P",
-		"Q",
-		"R",
-		"S",
-		"T",
-		"U",
-		"V",
-		"W",
-		"X",
-		"Y",
-		"Z",
-		"a",
-		"b",
-		"c",
-		"d",
-		"e",
-		"f",
-		"g",
-		"h",
-		"i",
-		"j",
-		"k",
-		"l",
-		"m",
-		"n",
-		"o",
-		"p",
-		"q",
-		"r",
-		"s",
-		"t",
-		"u",
-		"v",
-		"w",
-		"x",
-		"y",
-		"z",
-		"0",
-		"1",
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"~",
-		"`",
-		"!",
-		"@",
-		"#",
-		"$",
-		"%",
-		"^",
-		"&",
-		"*",
-		"(",
-		")",
-		"_",
-		"-",
-		"+",
-		"=",
-		"{",
-		"[",
-		"}",
-		"]",
-		",",
-		"|",
-		":",
-		";",
-		"<",
-		">",
-		".",
-		"?",
-		"/",
-	];
+	const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	const numbers = "0123456789";
+	const symbols = "~`!@#$%^&*()_-+={[}]|:;<>./?";
 
-	if (!includeSymbols) {
-		characters = characters.filter((c) => !isSymbol(c));
-	}
+	let characters = letters;
 
-	if (!includeNumbers) {
-		characters = characters.filter((c) => !isNumber(c));
-	}
-	return characters;
-}
+	if (includeNumbers) characters += numbers;
+	if (includeSymbols) characters += symbols;
 
-function isSymbol(char) {
-	const symbols = [
-		"~",
-		"`",
-		"!",
-		"@",
-		"#",
-		"$",
-		"%",
-		"^",
-		"&",
-		"*",
-		"(",
-		")",
-		"_",
-		"-",
-		"+",
-		"=",
-		"{",
-		"[",
-		"}",
-		"]",
-		",",
-		"|",
-		":",
-		";",
-		"<",
-		">",
-		".",
-		"?",
-		"/",
-	];
-	return symbols.includes(char);
-}
-function isNumber(num) {
-	const number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-	return number.includes(num);
+	return Array.from(characters);
 }
 
 function getRandomChar(length) {
@@ -180,11 +58,22 @@ function generatePassword() {
 	return password;
 }
 
-const copyContent = async () => {
-	const passwordText = document.querySelector(".password-el");
+function initializeApp() {
+	configureTheme();
+	document.getElementById("theme-btn").addEventListener("click", toggleTheme);
+	document
+		.querySelector(".generate-btn")
+		.addEventListener("click", generatePassword);
+	document.querySelectorAll(".password-el").forEach((el) => {
+		el.addEventListener("click", copyContent);
+	});
+}
+
+const copyContent = async (event) => {
+	const passwordText = event.target.textContent;
 	const confirmMessage = document.getElementById("confirm-message");
 	try {
-		await navigator.clipboard.writeText(passwordText.innerHTML);
+		await navigator.clipboard.writeText(passwordText);
 		confirmMessage.classList.add("visible");
 		setTimeout(() => {
 			confirmMessage.classList.remove("visible");
@@ -194,10 +83,4 @@ const copyContent = async () => {
 	}
 };
 
-function toggleDarkMode() {
-	const body = document.querySelector("body");
-	const main = document.querySelector(".app-wrapper");
-
-	body.classList.toggle("light-mode");
-	main.classList.toggle("light-mode");
-}
+initializeApp();
