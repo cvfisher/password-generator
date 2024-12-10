@@ -1,4 +1,7 @@
 @media (max-width: 768px) {
+	body {
+		display: block;
+	}
 	.app-wrapper {
 		display: flex;
 		justify-content: center;
@@ -8,6 +11,7 @@
 		margin: 0;
 		padding: 5rem 2.5rem;
 		text-align: center;
+		border-radius: 0;
 	}
 
 	.controls-wrapper {

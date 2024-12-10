@@ -20,7 +20,6 @@ body {
 /* App wrapper styles */
 .app-wrapper {
 	max-width: 80%;
-	/* margin: 7rem auto; */
 	background: var(--app-color);
 	padding: 115px 52px;
 	position: relative;
