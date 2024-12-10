@@ -58,4 +58,8 @@
 	.include-nums-wrapper {
 		display: inline-block;
 	}
+
+	#theme-btn {
+		font-size: 2rem;
+	}
 }
